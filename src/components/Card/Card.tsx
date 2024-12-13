@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Card.css";
 import { FaGithub, FaLinkedin, FaStackOverflow } from "react-icons/fa";
 
@@ -26,9 +26,37 @@ const IDCard: React.FC<IDCardProps> = ({
   stackoverflow,
 }) => {
   const [role, company] = title.split(" @ ");
+  const [transformStyle, setTransformStyle] = useState<string>("");
+
+  const handleMouseMove = (
+    event: React.MouseEvent<HTMLDivElement, MouseEvent>,
+  ) => {
+    const card = event.currentTarget as HTMLElement;
+    const { left, top, width, height } = card.getBoundingClientRect();
+    const centerX = left + width / 2;
+    const centerY = top + height / 2;
+    const mouseX = event.clientX;
+    const mouseY = event.clientY;
+
+    const deltaX = (mouseX - centerX) / width;
+    const deltaY = (mouseY - centerY) / height;
+
+    setTransformStyle(
+      `perspective(1000px) rotateX(${deltaY * 10}deg) rotateY(${deltaX * -10}deg)`,
+    );
+  };
+
+  const handleMouseLeave = () => {
+    setTransformStyle("perspective(1000px) rotateX(0deg) rotateY(0deg)");
+  };
 
   return (
-    <div className="card">
+    <div
+      className="card"
+      onMouseMove={handleMouseMove}
+      onMouseLeave={handleMouseLeave}
+      style={{ transform: transformStyle }}
+    >
       <div className="profile-image">
         <img src={image} alt={name} />
       </div>

@@ -14,6 +14,8 @@ body {
     position: relative;
     width: 500px;
     height: 250px;
+    transition: transform 0.1s ease-out;
+    transform-style: preserve-3d; /* Essential for 3D effects */
 }
 
 .profile-image {
