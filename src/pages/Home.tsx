@@ -20,7 +20,7 @@ const Home: React.FC = () => {
         location="Toronto, ON"
         university="McMaster University"
         skills={["Cloud", "Backend", "DevOps", "Databases"]}
-        image="https://avatars.githubusercontent.com/u/67332328?v=4"
+        image="/images/github.jpg"
         github="https://github.com/AryaanSheth"
         linkedin="https://www.linkedin.com/in/aryaansheth/"
         stackoverflow="https://stackoverflow.com/users/21440608/lines"
