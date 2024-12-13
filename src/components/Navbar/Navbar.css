@@ -1,3 +1,5 @@
+/* src/components/Navbar/Navbar.css */
+
 .navbar {
     display: flex;
     gap: 20px;
@@ -7,18 +9,22 @@
     margin-bottom: 50px;
 }
 
-.navbar a {
+.navbar-item {
     text-decoration: none;
-    color: #333333;
+    color: inherit; /* Ensures the color is inherited from the parent */
     font-size: 14px;
     padding: 10px 20px;
     border-radius: 30px;
-    transition: all 0.1s ease;
+    transition: all 0.3s ease; /* Smooth transition for all properties */
 }
 
-.navbar a:hover {
+.navbar-item:hover {
     color: #333333;
-    outline: 2px solid #777777;
-    outline-offset: 0px;
+    text-decoration: underline;
+    text-decoration-color: #777777;
+    text-decoration-thickness: 2px; /* Make the underline thicker */
+    text-decoration-style: solid; /* Ensure the underline is solid */
     border-radius: 20px;
+    text-underline-position: under; /* Ensures the underline stays at the bottom */
+    transition: text-decoration-thickness 0.3s ease; /* Animate the thickness change */
 }

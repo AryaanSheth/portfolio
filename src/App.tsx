@@ -1,31 +1,22 @@
+// src/App.tsx
+
 import React from "react";
-import IDCard from "./components/Card/Card";
-import Navbar from "./components/Navbar/Navbar";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import Home from "./pages/Home";
+import Projects from "./pages/Projects";
+import Experiences from "./pages/Experiences";
 
 const App: React.FC = () => {
   return (
-    <div
-      style={{
-        display: "flex",
-        justifyContent: "flex-start",
-        alignItems: "center",
-        minHeight: "100vh",
-        flexDirection: "column",
-      }}
-    >
-      <Navbar />
-      <IDCard
-        name="Aryaan Sheth"
-        title="Cloud Analyst Intern @ Sun Life Financial"
-        location="Toronto, ON"
-        university="McMaster University"
-        skills={["Cloud", "Backend", "DevOps", "Databases"]}
-        image="https://avatars.githubusercontent.com/u/67332328?v=4"
-        github="https://github.com/AryaanSheth"
-        linkedin="https://www.linkedin.com/in/aryaansheth/"
-        stackoverflow="https://stackoverflow.com/users/21440608/lines"
-      />
-    </div>
+    <Router>
+      <div style={{ padding: "20px" }}>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/projects" element={<Projects />} />
+          <Route path="/experience" element={<Experiences />} />
+        </Routes>
+      </div>
+    </Router>
   );
 };
 

@@ -1,18 +1,21 @@
+// src/components/Navbar/Navbar.tsx
+
 import React from "react";
+import { Link } from "react-router-dom";
 import "./Navbar.css";
 
 const Navbar: React.FC = () => {
   return (
     <div className="navbar">
-      <a href="#home" className="navbar-item">
+      <Link to="/" className="navbar-item">
         Home
-      </a>
-      <a href="#projects" className="navbar-item">
+      </Link>
+      <Link to="/projects" className="navbar-item">
         Projects
-      </a>
-      <a href="#experience" className="navbar-item">
+      </Link>
+      <Link to="/experience" className="navbar-item">
         Experience
-      </a>
+      </Link>
     </div>
   );
 };
