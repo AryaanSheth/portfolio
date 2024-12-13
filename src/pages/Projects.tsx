@@ -53,6 +53,7 @@ const Projects: React.FC = () => {
         flexDirection: "column",
       }}
     >
+      <title>Projects - Portfolio</title>
       <Navbar />
       {projects.map((project, index) => (
         <ListCard

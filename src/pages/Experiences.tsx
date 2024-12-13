@@ -57,6 +57,7 @@ const Experiences: React.FC = () => {
         flexDirection: "column",
       }}
     >
+      <title>Experiences - Portfolio</title>
       <Navbar />
       {sortedExperiences.map((experience, index) => (
         <ListCard
