@@ -7,7 +7,7 @@ interface ListCardProps {
   desc: string;
   tags: string[];
   link?: string;
-  dateRange?: string; // Optional date range (e.g., "01/2023 - 06/2023")
+  dateRange?: string;
 }
 
 const ListCard: React.FC<ListCardProps> = ({
