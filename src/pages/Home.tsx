@@ -13,6 +13,7 @@ const Home: React.FC = () => {
         flexDirection: "column",
       }}
     >
+      <title>Home - Portfolio</title>
       <Navbar />
       <IDCard
         name="Aryaan Sheth"
