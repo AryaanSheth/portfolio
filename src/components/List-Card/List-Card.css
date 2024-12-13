@@ -34,12 +34,25 @@
     font-size: 20px;
     font-weight: bold;
     color: #333333;
+    flex-grow: 1;
 }
 
 .list-card-content p {
     font-size: 14px;
     color: #555555;
     margin: 8px 0;
+}
+
+.title-and-date {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.date-range {
+    font-size: 14px;
+    color: #888888;
+    font-style: italic;
 }
 
 .tags {
@@ -56,4 +69,12 @@
     font-size: 12px;
     color: #555555;
     border: 1px solid #ddd;
+}
+
+.list-card-content h3 a {
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+    color: inherit;
+    font-weight: inherit;
+    font-size: inherit;
 }
