@@ -1,11 +1,19 @@
 import React from "react";
 import IDCard from "./components/Card/Card";
+import Navbar from "./components/Navbar/Navbar";
 
 const App: React.FC = () => {
   return (
     <div
-      style={{ display: "flex", justifyContent: "center", marginTop: "50px" }}
+      style={{
+        display: "flex",
+        justifyContent: "flex-start",
+        alignItems: "center",
+        minHeight: "100vh",
+        flexDirection: "column",
+      }}
     >
+      <Navbar />
       <IDCard
         name="Aryaan Sheth"
         title="Cloud Analyst Intern @ Sun Life Financial"
