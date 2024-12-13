@@ -14,8 +14,6 @@ body {
     position: relative;
     width: 500px;
     height: 250px;
-    transition: transform 0.1s ease-out;
-    transform-style: preserve-3d; /* Essential for 3D effects */
 }
 
 .profile-image {
@@ -77,17 +75,6 @@ body {
     background-color: transparent;
 }
 
-.digital {
-    position: absolute;
-    bottom: 12px;
-    left: 12px;
-    background-color: #d0d0d0;
-    padding: 8px 16px;
-    border-radius: 16px;
-    font-size: 14px;
-    color: #555555;
-}
-
 .sun-life-link {
     font-weight: bold;
     text-decoration: underline;
@@ -109,4 +96,46 @@ body {
 
 .social-icon:hover {
     color: #555555;
+}
+
+/* Mobile styles */
+@media (max-width: 768px) {
+    .card {
+        width: 100%;
+        height: auto;
+        padding: 12px;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .profile-image {
+        width: 80px;
+        height: 80px;
+        margin-right: 0;
+        margin-bottom: 16px;
+    }
+
+    .card-content h2 {
+        font-size: 20px;
+    }
+
+    .card-content .title,
+    .card-content .location,
+    .card-content .university {
+        font-size: 14px;
+    }
+
+    .skills {
+        grid-template-columns: 1fr;
+        margin-top: 10px;
+    }
+
+    .social-links {
+        gap: 15px;
+        margin-top: 10px;
+    }
+
+    .skills span {
+        font-size: 10px;
+    }
 }

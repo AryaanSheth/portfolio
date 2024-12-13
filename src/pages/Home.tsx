@@ -7,10 +7,12 @@ const Home: React.FC = () => {
     <div
       style={{
         display: "flex",
-        justifyContent: "flex-start", // Align items to the top of the screen
+        justifyContent: "center", // Center content horizontally
         alignItems: "center",
         minHeight: "100vh",
         flexDirection: "column",
+        padding: "0 10px", // Add some padding to avoid horizontal scroll
+        boxSizing: "border-box",
       }}
     >
       <Navbar />
