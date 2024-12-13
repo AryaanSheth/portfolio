@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./Card.css";
 import { FaGithub, FaLinkedin, FaStackOverflow } from "react-icons/fa";
 
@@ -26,7 +26,10 @@ const IDCard: React.FC<IDCardProps> = ({
   stackoverflow,
 }) => {
   const [role, company] = title.split(" @ ");
-  const [transformStyle, setTransformStyle] = useState<string>("");
+  const [transformStyle, setTransformStyle] = useState<string>(
+    "perspective(1000px) rotateX(0deg) rotateY(0deg)",
+  );
+  const [isHovering, setIsHovering] = useState<boolean>(false);
 
   const handleMouseMove = (
     event: React.MouseEvent<HTMLDivElement, MouseEvent>,
@@ -44,11 +47,22 @@ const IDCard: React.FC<IDCardProps> = ({
     setTransformStyle(
       `perspective(1000px) rotateX(${deltaY * 10}deg) rotateY(${deltaX * -10}deg)`,
     );
+    setIsHovering(true);
   };
 
   const handleMouseLeave = () => {
-    setTransformStyle("perspective(1000px) rotateX(0deg) rotateY(0deg)");
+    setIsHovering(false);
   };
+
+  useEffect(() => {
+    if (!isHovering) {
+      const timer = setTimeout(() => {
+        setTransformStyle("perspective(1000px) rotateX(0deg) rotateY(0deg)");
+      }, 100);
+
+      return () => clearTimeout(timer);
+    }
+  }, [isHovering]);
 
   return (
     <div

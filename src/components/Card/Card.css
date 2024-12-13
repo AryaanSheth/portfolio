@@ -14,6 +14,7 @@ body {
     position: relative;
     width: 500px;
     height: 250px;
+    transition: transform 0.3s ease-out;
 }
 
 .profile-image {
