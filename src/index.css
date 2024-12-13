@@ -4,6 +4,7 @@
 @tailwind utilities;
 
 body {
+    cursor: crosshair;
     margin: 0;
     padding: 0;
     font-family: "PT Mono", monospace;
