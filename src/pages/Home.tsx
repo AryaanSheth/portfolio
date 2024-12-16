@@ -20,11 +20,11 @@ const Home: React.FC = () => {
         title="Cloud Analyst Intern @ Sun Life Financial"
         location="Toronto, ON"
         university="McMaster University"
-        skills={["Cloud", "Backend", "DevOps", "Databases"]}
         image="/images/github.jpg"
         github="https://github.com/AryaanSheth"
         linkedin="https://www.linkedin.com/in/aryaansheth/"
         stackoverflow="https://stackoverflow.com/users/21440608/lines"
+        description="Cloud & Backend Developer"
       />
     </div>
   );

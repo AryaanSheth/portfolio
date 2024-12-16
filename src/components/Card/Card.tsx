@@ -1,13 +1,18 @@
 import React, { useState, useEffect } from "react";
 import "./Card.css";
-import { FaGithub, FaLinkedin, FaStackOverflow } from "react-icons/fa";
+import {
+  FaGithub,
+  FaLinkedin,
+  FaStackOverflow,
+  FaDownload,
+} from "react-icons/fa";
 
 interface IDCardProps {
   name: string;
   title: string;
   location: string;
   university: string;
-  skills: string[];
+  description: string;
   image: string;
   github: string;
   linkedin: string;
@@ -19,7 +24,7 @@ const IDCard: React.FC<IDCardProps> = ({
   title,
   location,
   university,
-  skills,
+  description,
   image,
   github,
   linkedin,
@@ -90,6 +95,7 @@ const IDCard: React.FC<IDCardProps> = ({
         </div>
         <div className="location">{location}</div>
         <div className="university">{university}</div>
+        <div className="description">{description}</div>
         <div className="social-links">
           <a href={github} target="_blank" rel="noopener noreferrer">
             <FaGithub className="social-icon" />
@@ -101,11 +107,11 @@ const IDCard: React.FC<IDCardProps> = ({
             <FaStackOverflow className="social-icon" />
           </a>
         </div>
-        <div className="skills">
-          {skills.map((skill, index) => (
-            <span key={index}>{skill}</span>
-          ))}
-        </div>
+      </div>
+      <div className="resume-button">
+        <a href="/resume.pdf" download>
+          Resume <FaDownload />
+        </a>
       </div>
     </div>
   );
