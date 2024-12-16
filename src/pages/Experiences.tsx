@@ -1,5 +1,3 @@
-// src/pages/Experiences.tsx
-
 import React from "react";
 import ListCard from "../components/List-Card/List-Card";
 import Navbar from "../components/Navbar/Navbar";
