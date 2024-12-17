@@ -109,7 +109,7 @@ const IDCard: React.FC<IDCardProps> = ({
         </div>
       </div>
       <div className="resume-button">
-        <a href="/resume.pdf" download>
+        <a href="docs/AryaanSheth_Resume.pdf" download>
           Resume <FaDownload />
         </a>
       </div>
