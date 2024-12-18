@@ -1,8 +1,16 @@
-import React from "react";
+import React, { useEffect } from "react";
 import IDCard from "../components/Card/Card";
 import Navbar from "../components/Navbar/Navbar";
 
 const Home: React.FC = () => {
+  useEffect(() => {
+    document.body.style.overflow = "hidden";
+
+    return () => {
+      document.body.style.overflow = "auto";
+    };
+  }, []);
+
   return (
     <div
       style={{

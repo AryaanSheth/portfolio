@@ -3,5 +3,10 @@ body {
     padding: 0;
     font-family: Arial, sans-serif;
     height: 100vh;
-    overflow-x: hidden;
+    overflow: hidden;
+}
+
+html,
+body {
+    overflow: hidden;
 }

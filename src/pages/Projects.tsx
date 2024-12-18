@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import ListCard from "../components/List-Card/List-Card";
 import Navbar from "../components/Navbar/Navbar";
 
@@ -40,6 +40,14 @@ const Projects: React.FC = () => {
       tags: ["Python", "NLP", "ML", "Redis"],
     },
   ];
+
+  useEffect(() => {
+    document.body.style.overflow = "hidden";
+
+    return () => {
+      document.body.style.overflow = "auto";
+    };
+  }, []);
 
   return (
     <div
