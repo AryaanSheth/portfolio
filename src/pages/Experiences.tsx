@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import ListCard from "../components/List-Card/List-Card";
 import Navbar from "../components/Navbar/Navbar";
 
@@ -44,14 +44,6 @@ const Experiences: React.FC = () => {
     const bStartDate = parseDate(b.dateRange.split(" - ")[0]);
     return bStartDate.getTime() - aStartDate.getTime();
   });
-
-  useEffect(() => {
-    document.body.style.overflow = "hidden";
-
-    return () => {
-      document.body.style.overflow = "auto";
-    };
-  }, []);
 
   return (
     <div
