@@ -6,6 +6,7 @@ import {
   FaStackOverflow,
   FaDownload,
 } from "react-icons/fa";
+import { FaLink } from "react-icons/fa6";
 
 interface IDCardProps {
   name: string;
@@ -111,6 +112,15 @@ const IDCard: React.FC<IDCardProps> = ({
       <div className="resume-button">
         <a href="docs/AryaanSheth_Resume.pdf" download>
           Resume <FaDownload />
+        </a>
+      </div>
+      <div className="blog-button">
+        <a
+          href="https://aryaansheth.github.io/blog/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Blog <FaLink />
         </a>
       </div>
     </div>
