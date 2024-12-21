@@ -166,6 +166,12 @@ body {
         margin-bottom: 16px;
     }
 
+    .card-content {
+        align-items: center;
+        text-align: center;
+        width: 100%;
+    }
+
     .card-content h2 {
         font-size: 20px;
     }
@@ -181,12 +187,32 @@ body {
     }
 
     .social-links {
+        display: flex;
         gap: 15px;
-        margin-top: 10px;
+        justify-content: center;
+        margin: 10px auto;
+        flex-wrap: wrap;
+        margin-bottom: 40px;
+        width: 100%;
+        padding: 0 12px;
     }
 
-    .resume-button a {
+    .button-wrapper {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        margin-top: auto;
+    }
+
+    .resume-button,
+    .blog-button {
+        flex: 0 1 auto;
+    }
+
+    .resume-button a,
+    .blog-button a {
         font-size: 12px;
         padding: 6px 12px;
+        white-space: nowrap;
     }
 }
