@@ -29,7 +29,7 @@ const Experiences: React.FC = () => {
       name: "Sun Life Financial",
       image: "/images/sl.jpg",
       desc: "Cloud Analyst Intern",
-      tags: [],
+      tags: ["AWS", "Python", "Power Automate"],
       dateRange: "1/2025 - 4/2025",
     },
   ];
