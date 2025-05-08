@@ -32,6 +32,13 @@ const Experiences: React.FC = () => {
       tags: ["AWS", "Python", "Power Automate"],
       dateRange: "1/2025 - 4/2025",
     },
+    {
+      name: "Sun Life Financial",
+      image: "/images/sl.jpg",
+      desc: "DevOps Automation Engineer Intern",
+      tags: ["Ansible", "Terraform", "AWS"],
+      dateRange: "5/2025 - 8/2025",
+    },
   ];
 
   const parseDate = (dateStr: string) => {
