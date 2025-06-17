@@ -5,6 +5,13 @@ import Navbar from "../components/Navbar/Navbar";
 const Projects: React.FC = () => {
   const projects = [
     {
+      name: "Beyonds Cloud",
+      image: "https://avatars.githubusercontent.com/u/199815102?s=48&v=4",
+      desc: "AI powered Google Maps to augment the real world with your imagination",
+      link: "https://beyonds.cloud",
+      tags: ["GCP", "Typescript", "PostgreSQL", "React", "AI/ML"],
+    },
+    {
       name: "gloq",
       image: "/images/gleam.png",
       desc: "Gleam wrapper for interfacing with GroqCloud LLM API",

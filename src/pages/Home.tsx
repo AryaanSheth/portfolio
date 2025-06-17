@@ -25,7 +25,7 @@ const Home: React.FC = () => {
       <Navbar />
       <IDCard
         name="Aryaan Sheth"
-        title="Cloud Analyst Intern @ Sun Life Financial"
+        title="DevOps Engineer Intern @ Sun Life"
         location="Toronto, ON"
         university="McMaster University"
         image="/images/github.jpg"
