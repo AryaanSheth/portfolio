@@ -8,6 +8,7 @@ interface ListCardProps {
   tags: string[];
   link?: string;
   dateRange?: string;
+  location?: string;
 }
 
 const ListCard: React.FC<ListCardProps> = ({
@@ -17,6 +18,7 @@ const ListCard: React.FC<ListCardProps> = ({
   tags,
   link,
   dateRange,
+  location,
 }) => {
   return (
     <div className="list-card">
@@ -34,7 +36,10 @@ const ListCard: React.FC<ListCardProps> = ({
           ) : (
             <h3>{name}</h3>
           )}
-          {dateRange && <span className="date-range">{dateRange}</span>}
+          <div className="meta-row">
+            {dateRange && <span className="date-range">{dateRange}</span>}
+            {location && <span className="location">{location}</span>}
+          </div>
         </div>
         <p>{desc}</p>
         <div className="tags">

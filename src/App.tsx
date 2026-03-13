@@ -7,7 +7,14 @@ import Experiences from "./pages/Experiences";
 const App: React.FC = () => {
   return (
     <Router>
-      <div style={{ padding: "20px" }}>
+      <div
+        style={{
+          padding: "0 24px",
+          maxWidth: 680,
+          margin: "0 auto",
+          minHeight: "100vh",
+        }}
+      >
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/projects" element={<Projects />} />

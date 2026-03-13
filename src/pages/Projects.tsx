@@ -1,50 +1,54 @@
-import React from "react";
+import React, { useEffect } from "react";
 import ListCard from "../components/List-Card/List-Card";
 import Navbar from "../components/Navbar/Navbar";
 
 const Projects: React.FC = () => {
+  useEffect(() => {
+    document.title = "Projects – Aryaan Sheth";
+    return () => { document.title = "Aryaan Sheth – DevOps & Software Engineer"; };
+  }, []);
   const projects = [
+    {
+      name: "PromptLint",
+      image: "/images/promptlint.png",
+      desc: "LLM prompt linting for CLI & VS Code",
+      link: "https://promptlint.dev",
+      tags: ["Python", "CLI"],
+    },
+    {
+      name: "HFT Arbitrage Bot",
+      image: "/images/go.png",
+      desc: "Real-time arbitrage simulation across exchanges",
+      link: "https://github.com/AryaanSheth",
+      tags: ["Go", "WebSockets"],
+    },
+    {
+      name: "Flight Delay Prediction",
+      image: "/images/python.png",
+      desc: "ML pipeline for aviation delay severity",
+      link: "https://github.com/AryaanSheth",
+      tags: ["Python", "PyTorch"],
+    },
     {
       name: "Beyonds Cloud",
       image: "https://avatars.githubusercontent.com/u/199815102?s=48&v=4",
-      desc: "AI powered Google Maps to augment the real world with your imagination",
+      desc: "AI-augmented mapping",
       link: "https://beyonds.cloud",
-      tags: ["GCP", "Typescript", "PostgreSQL", "React", "AI/ML"],
-    },
-    {
-      name: "gloq",
-      image: "/images/gleam.png",
-      desc: "Gleam wrapper for interfacing with GroqCloud LLM API",
-      link: "https://hex.pm/packages/gloq",
-      tags: ["Gleam", "AI/ML", "API"],
+      tags: ["GCP", "React"],
     },
     {
       name: "gopsd",
       image: "/images/go.png",
-      desc: "Blazingly Fast GPSD Client For Go",
+      desc: "GPSD client for Go",
       link: "https://pkg.go.dev/github.com/AryaanSheth/gopsd",
-      tags: ["Golang", "Systemd", "Linux", "GPS"],
+      tags: ["Go"],
     },
     {
-      name: "Lorenz Waterwheel Simulator",
-      image: "/images/lorenz.jpg",
-      desc: "Computational model to demonstrate the chaos of the Lorenz equations and their deterministic properties",
-      link: "https://github.com/AryaanSheth/Lorenz-Water-Wheel-Simulator",
-      tags: ["C++", "Physics", "Simulation", "Scientific Computing"],
-    },
-    {
-      name: "Phishman",
-      image: "/images/python.png",
-      desc: "Real-time phishing detection system for Discord servers",
-      link: "https://github.com/AryaanSheth/phishman",
-      tags: ["Python", "API", "Cyber Security"],
-    },
-    {
-      name: "tAIket",
-      image: "/images/taiket.jpg",
-      desc: "AI Powered Project Management System for Businesses To Optimize Productivity",
-      link: "https://devpost.com/software/placeholder-0hbrik",
-      tags: ["Python", "NLP", "ML", "Redis"],
+      name: "gloq",
+      image: "/images/gleam.png",
+      desc: "Gleam wrapper for Groq API",
+      link: "https://hex.pm/packages/gloq",
+      tags: ["Gleam"],
     },
   ];
 
@@ -58,7 +62,6 @@ const Projects: React.FC = () => {
         flexDirection: "column",
       }}
     >
-      <title>Projects - Portfolio</title>
       <Navbar />
       {projects.map((project, index) => (
         <ListCard

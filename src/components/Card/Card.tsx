@@ -1,35 +1,35 @@
 import React, { useState, useEffect } from "react";
 import "./Card.css";
-import {
-  FaGithub,
-  FaLinkedin,
-  FaStackOverflow,
-  FaDownload,
-} from "react-icons/fa";
-import { FaLink } from "react-icons/fa6";
+import { FaGithub, FaLinkedin, FaDownload, FaEnvelope, FaGlobe } from "react-icons/fa";
 
 interface IDCardProps {
   name: string;
   title: string;
+  companyLink?: string;
   location: string;
   university: string;
+  graduationDate?: string;
   description: string;
   image: string;
   github: string;
   linkedin: string;
-  stackoverflow: string;
+  website?: string;
+  email?: string;
 }
 
 const IDCard: React.FC<IDCardProps> = ({
   name,
   title,
+  companyLink,
   location,
   university,
+  graduationDate,
   description,
   image,
   github,
   linkedin,
-  stackoverflow,
+  website,
+  email,
 }) => {
   const [role, company] = title.split(" @ ");
   const [transformStyle, setTransformStyle] = useState<string>(
@@ -70,6 +70,10 @@ const IDCard: React.FC<IDCardProps> = ({
     }
   }, [isHovering]);
 
+  const educationLine = graduationDate
+    ? `${university} · ${graduationDate}`
+    : university;
+
   return (
     <div
       className="card"
@@ -85,43 +89,50 @@ const IDCard: React.FC<IDCardProps> = ({
         <div className="title">
           {role}
           {" @ "}
-          <a
-            href="https://www.sunlife.ca/en/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="sun-life-link"
-          >
-            {company}
-          </a>
+          {companyLink ? (
+            <a
+              href={companyLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="company-link"
+            >
+              {company}
+            </a>
+          ) : (
+            <span>{company}</span>
+          )}
         </div>
         <div className="location">{location}</div>
-        <div className="university">{university}</div>
+        <div className="education-line">{educationLine}</div>
         <div className="description">{description}</div>
-        <div className="social-links">
-          <a href={github} target="_blank" rel="noopener noreferrer">
+        <div className="links-row">
+          <a href={github} target="_blank" rel="noopener noreferrer" title="GitHub">
             <FaGithub className="social-icon" />
           </a>
-          <a href={linkedin} target="_blank" rel="noopener noreferrer">
+          <a href={linkedin} target="_blank" rel="noopener noreferrer" title="LinkedIn">
             <FaLinkedin className="social-icon" />
           </a>
-          <a href={stackoverflow} target="_blank" rel="noopener noreferrer">
-            <FaStackOverflow className="social-icon" />
+          {website && (
+            <a
+              href={website.startsWith("http") ? website : `https://${website}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              title={website}
+            >
+              <FaGlobe className="social-icon" />
+            </a>
+          )}
+          {email && (
+            <a href={`mailto:${email}`} title={email}>
+              <FaEnvelope className="social-icon" />
+            </a>
+          )}
+        </div>
+        <div className="action-links">
+          <a href="https://aryaansheth.github.io/resume/" download>
+            Resume <FaDownload />
           </a>
         </div>
-      </div>
-      <div className="resume-button">
-        <a href="https://aryaansheth.github.io/resume/" download>
-          Resume <FaDownload />
-        </a>
-      </div>
-      <div className="blog-button">
-        <a
-          href="https://aryaansheth.github.io/blog/"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Blog <FaLink />
-        </a>
       </div>
     </div>
   );

@@ -4,6 +4,7 @@ import Navbar from "../components/Navbar/Navbar";
 
 const Home: React.FC = () => {
   useEffect(() => {
+    document.title = "Aryaan Sheth – DevOps & Software Engineer";
     document.body.style.overflow = "hidden";
 
     return () => {
@@ -15,25 +16,33 @@ const Home: React.FC = () => {
     <div
       style={{
         display: "flex",
-        justifyContent: "flex-start",
-        alignItems: "center",
-        minHeight: "100vh",
         flexDirection: "column",
+        minHeight: "100vh",
       }}
     >
-      <title>Home - Portfolio</title>
       <Navbar />
-      <IDCard
+      <div
+        style={{
+          flex: 1,
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+        }}
+      >
+        <IDCard
         name="Aryaan Sheth"
-        title="DevOps Engineer Intern @ Sun Life"
-        location="Toronto, ON"
+        title="Founder @ PromptLint"
+        companyLink="https://promptlint.dev"
+        location="Hamilton, ON"
         university="McMaster University"
+        graduationDate="2027"
         image="/images/github.jpg"
         github="https://github.com/AryaanSheth"
-        linkedin="https://www.linkedin.com/in/aryaansheth/"
-        stackoverflow="https://stackoverflow.com/users/21440608/lines"
-        description="Cloud & Backend Developer"
-      />
+        linkedin="https://www.linkedin.com/in/aryaansheth"
+        email="avsheth03@gmail.com"
+        description="DevOps & Software Engineer · AI Tooling"
+        />
+      </div>
     </div>
   );
 };
